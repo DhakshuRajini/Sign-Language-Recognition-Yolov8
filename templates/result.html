@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 30px;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .image-container {
+            text-align: center;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            padding: 5px;
+        }
+        .upload-link {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .upload-link:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Prediction Result</h1>
+    <div class="container">
+        <div class="image-container">
+            <h2>Original Image</h2>
+            <img src="{{ original }}" alt="Original Image">
+        </div>
+        <div class="image-container">
+            <h2>Annotated Image</h2>
+            <img src="{{ annotated }}" alt="Annotated Image">
+        </div>
+    </div>
+    <br>
+    <a href="/" class="upload-link">Upload Another Image</a>
+</body>
+</html>

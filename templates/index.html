@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Upload</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        form {
+            margin-top: 20px;
+        }
+        input {
+            margin-bottom: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        img {
+            margin-top: 20px;
+            max-width: 300px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Upload an Image</h1>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <input type="file" name="image" accept="image/*" required onchange="previewImage(event)">
+        <br>
+        <img id="imagePreview" alt="Selected Image">
+        <br>
+        <button type="submit">Upload</button>
+    </form>
+
+    <script>
+        function previewImage(event) {
+            const imagePreview = document.getElementById('imagePreview');
+            imagePreview.src = URL.createObjectURL(event.target.files[0]);
+            imagePreview.style.display = 'block';
+        }
+    </script>
+</body>
+</html>
